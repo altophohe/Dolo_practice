@@ -1,0 +1,114 @@
+name: My model
+
+symbols:
+
+   exogenous: [e_A]
+   states: [n, A, u]
+   controls: [c, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, n, M, q, f, w, lambda, mu, Ce, b, theta, mu]
+   expectations: [Q]
+   values: [V]
+   parameters: [mu, T, rhoA, sigmaA, aL, alpha, beta, Theta, chi, gamma, gamma_w, w_ss, Y_ss, rtilde, epsilon, Phi]
+   rewards: [U]
+
+definitions:
+    y:A*(n(-1)*Ea+M*Eahat)
+    F:1-(aL/abar)^(alpha)
+    Fhat:1-(aL/ahat)^(alpha)
+    Ea:alpha/(alpha-1)*(aL/abar)^(alpha-1)
+    Eahat:alpha/(alpha-1)*(aL/ahat)^(alpha-1)
+    q:M/v
+    c:w
+    f:M/utilde
+    theta:v/utilde
+    u:1-n
+    b:rtilde*w
+    utilde=u(-1)+F*n(-1)
+    c=w
+    
+    
+
+    
+equations:
+
+    arbitrage:
+        - -T-mu*exp(A)*abar-lambda                   | 1 <= abar <= inf
+        - -mu*exp(A)*ahat-lambda                     | 1 <= ahat <= inf
+        - Theta*Y/n=q*(mu*A*Ea+lambda*(1-Fhat))     
+        
+
+    transition:
+        - A = rho*A(-1) + e_A
+        - n =(1-F)*n(-1)+(1-Fhat)*M
+        
+    value:
+        - V = w^(1-sigma)/(1-sigma) + beta*V(1)
+
+    felicity:
+        - U =  w^(1-sigma)/(1-sigma) 
+
+    expectation:
+        - lambda= -w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1)*lambda(1))
+        - Q = beta*((w/w(1))^(sigma))*(1-F(1)+F(1)*f(1)*(1-Fhat(1))+rtilde^(-sigma)*(F(1)*(1-f(1))+F(1)*f(1)*Fhat(1)))
+        
+    direct_response:
+        - M = chi*utilde^gamma*v^(1-gamma)
+        - w = w_ss*(Y/Y_ss)^(gamma_w)
+        - Ce=(1-Theta/(1+epsilon)*(v/n)^(1+epsilon)-T*F*n(-1)/Y-Phi)*Y-w*n-b*u
+
+calibration:
+
+    # parameters 
+    beta : 0.968896575771715
+    T : 0.4
+    rhoA : 0.75
+    sigmaA : 0.001
+    aL : 1
+    alpha : 2
+    Theta : 5.448036323524477
+    chi : 0.728664531982996
+    gamma : 0.5
+    gamma_w : 1
+    w_ss : 1.635976501742720
+    Y_ss : 1.838445394164494
+    rtilde : 0.8
+    epsilon : 2.5
+    Phi : 0.01
+    phi: 1
+    mu : (eta-1)/eta-Phi
+    
+    # endogenous variables
+    n: 0.85
+    u:0.15
+    w: w_ss
+    b: rtilde*w_ss
+    c: w_ss
+    Y: Y_ss
+    F:0.08
+    Fhat:0.571920147319773
+    f:0.728664531982996
+    q:0.728664531982996
+    theta=1
+    M:0.158848867972293
+    v:0.218
+    abar:1.042572070155520
+    ahat:1.528402029669690
+    utilde:0.218
+    Ce:0.199899577483263
+    U: (w^(1-sigma)-1)/(1-sigma)
+    V: U/(1-beta)
+    
+   
+
+exogenous: !Normal
+    Sigma: [[sigmaA**2]]
+
+domain:
+    A: [-3*sigmaA/(1-rhoA^2)^0.5,  3*sigmaA/(1-rhoA^2)^0.5]
+    n: [ 0.65, 0.99]
+
+options:
+    grid: !Cartesian
+        n: [20, 20]
+
+
+
