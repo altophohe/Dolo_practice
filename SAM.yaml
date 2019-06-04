@@ -28,21 +28,21 @@ equations:
     arbitrage:
         - -T-mu*exp(A)*abar-lambda                   | 1 <= abar <= inf
         - -mu*exp(A)*ahat-lambda                     | 1 <= ahat <= inf
-        - Theta*Y/n=q*(mu*A*Ea+lambda*(1-Fhat))     
+        - Theta*Y/n-q*(mu*A*Ea+lambda*(1-Fhat))     
         
 
     transition:
         - A = rho*A(-1) + e_A
-        - n =(1-F)*n(-1)+(1-Fhat)*M
+        - n = (1-F)*n(-1)+(1-Fhat)*M
         
     value:
         - V = w^(1-sigma)/(1-sigma) + beta*V(1)
 
     felicity:
-        - U =  w^(1-sigma)/(1-sigma) 
+        - U =  (w^(1-sigma)-1)/(1-sigma) 
 
     expectation:
-        - lambda= -w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1)*lambda(1))
+        - lambda= -w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1))*lambda(1))
        # - Q = beta*((w/w(1))^(sigma))*(1-F(1)+F(1)*f(1)*(1-Fhat(1))+rtilde^(-sigma)*(F(1)*(1-f(1))+F(1)*f(1)*Fhat(1)))
         - Q = beta*((w/w(1))^(sigma))
         
