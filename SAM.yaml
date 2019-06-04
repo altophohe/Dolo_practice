@@ -13,7 +13,20 @@ symbols:
 
 
 definitions:
-        
+   - C=w*n+b*u
+   - F= 1-(aL/abar)^(alpha)
+   - Fhat = 1-(aL/ahat)^(alpha)
+   - Ea= alpha/(alpha-1)*(aL/abar)^(alpha-1)
+   - Eahat=alpha/(alpha-1)*(aL/ahat)^(alpha-1)
+   - utilde=u(-1)+F*n(-1)
+   - M = chi*utilde^gamma*v^(1-gamma)
+   - w = w_ss*(Y/Y_ss)^(gamma_w)
+   - Ce=(1-Theta*(v/n)-T*F*n(-1)/Y-Phi)*Y-C
+   - Y= A*(n(-1)*Ea+M*Eahat)
+   - b=rtilde*w
+   - q= M/v
+   - f=M/utilde
+   - theta=v/utilde       
         
        
 
@@ -37,20 +50,7 @@ equations:
    expectation:
       - Q = beta*((C/C(1))^(sigma))   
    direct_response:
-      - C=w*n+b*u
-      - F= 1-(aL/abar)^(alpha)
-      - Fhat = 1-(aL/ahat)^(alpha)
-      - Ea= alpha/(alpha-1)*(aL/abar)^(alpha-1)
-      - Eahat=alpha/(alpha-1)*(aL/ahat)^(alpha-1)
-      - utilde=u(-1)+F*n(-1)
-      - M = chi*utilde^gamma*v^(1-gamma)
-      - w = w_ss*(Y/Y_ss)^(gamma_w)
-      - Ce=(1-Theta*(v/n)-T*F*n(-1)/Y-Phi)*Y-C
-      - Y= A*(n(-1)*Ea+M*Eahat)
-      - b=rtilde*w
-      - q= M/v
-      - f=M/utilde
-      - theta=v/utilde
+      
         
 calibration:
     # parameters 
