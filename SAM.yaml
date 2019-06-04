@@ -4,7 +4,7 @@ symbols:
 
    exogenous: [e]
    states: [n, A, u]
-   controls: [c, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, M, q, f, w, lambda, mu, Ce, b, theta, mu]
+   controls: [C, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, M, q, f, w, lambda, mu, Ce, b, theta, mu]
    expectations: [Q]
    values: [V]
    rewards: [U]
@@ -38,24 +38,23 @@ equations:
         - n = (1-F)*n(-1)+(1-Fhat)*M
         
     value:
-        - V = w^(1-sigma)/(1-sigma) + beta*V(1)
+        - V = (C^(1-sigma)-1)/(1-sigma) + beta*V(1)
 
     felicity:
-        - U =  (w^(1-sigma)-1)/(1-sigma) 
+        - U =  (C^(1-sigma)-1)/(1-sigma) 
 
     expectation:
         - lambda= -w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1))*lambda(1))
-       # - Q = beta*((w/w(1))^(sigma))*(1-F(1)+F(1)*f(1)*(1-Fhat(1))+rtilde^(-sigma)*(F(1)*(1-f(1))+F(1)*f(1)*Fhat(1)))
-        - Q = beta*((w/w(1))^(sigma))
+        - Q = beta*((C/C(1))^(sigma))
         
     direct_response:
         - M = chi*utilde^gamma*v^(1-gamma)
         - w = w_ss*(Y/Y_ss)^(gamma_w)
-        - Ce=(1-Theta/(1+epsilon)*(v/n)^(1+epsilon)-T*F*n(-1)/Y-Phi)*Y-w*n-b*u
+        - Ce=(1-Theta/(1+epsilon)*(v/n)^(1+epsilon)-T*F*n(-1)/Y-Phi)*Y-C
         - y = A*(n(-1)*Ea+M*Eahat)
-        - c= w
         - u=1-n
         - b=rtilde*w
+        - C=w*n+b*u
      
         
 calibration:
@@ -83,7 +82,6 @@ calibration:
     u:0.15
     w: w_ss
     b: rtilde*w_ss
-    c: w_ss
     Y: Y_ss
     F:0.08
     Fhat:0.571920147319773
@@ -96,7 +94,8 @@ calibration:
     ahat:1.528402029669690
     utilde:0.218
     Ce:0.199899577483263
-    U: (w^(1-sigma)-1)/(1-sigma)
+    C: w_ss*0.85+rtilde*w_ss*0.15
+    U: (C^(1-sigma)-1)/(1-sigma)
     V: U/(1-beta)
     
    
