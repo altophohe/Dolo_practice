@@ -21,15 +21,15 @@ definitions:
 equations:
 
     arbitrage:
-        - -T-mu*exp(A)*abar-lambda                   | 1 <= abar <= inf
-        - -mu*exp(A)*ahat-lambda                     | 1 <= ahat <= inf
+        - T+mu*exp(A)*abar+lambda                   | 1 <= abar <= inf
+        - mu*exp(A)*ahat+lambda                     | 1 <= ahat <= inf
         - Theta*Y/n-q*(mu*A*Ea+lambda*(1-Fhat))     
         
 
     transition:
         - A = rho*A(-1) + e
         - n = (1-F)*n(-1)+(1-Fhat)*M
-        - u=1-n
+        - u = 1-n
     value:
         - V = (C^(1-sigma)-1)/(1-sigma) + beta*V(1)
 
@@ -37,7 +37,7 @@ equations:
         - U =  (C^(1-sigma)-1)/(1-sigma) 
 
     expectation:
-        - lambda= -w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1))*lambda(1))
+        - lambda = -w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1))*lambda(1))
         - Q = beta*((C/C(1))^(sigma))
         
     direct_response:
@@ -84,6 +84,8 @@ calibration:
     Y:Y_ss
     F:0.08
     Fhat:0.571920147319773
+    Ea: 1.918332609564019
+    Eahat: 1.308556231394321
     f:0.728664531982996
     q:0.728664531982996
     theta=1
@@ -96,7 +98,9 @@ calibration:
     C:w_ss*0.85+rtilde*w_ss*0.15
     U:(C^(1-sigma)-1)/(1-sigma)
     V:U/(1-beta)
-    
+    lambda:-1.258384337761378
+    A:0
+    Q:beta
    
 
 exogenous: !Normal
