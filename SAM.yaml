@@ -35,7 +35,7 @@ equations:
 
    arbitrage:
       - T+mu*exp(A)*abar+x                  | 1 <= abar <= inf
-      - mu*exp(A)*ahat+x                     | 1 <= ahat <= inf
+      - mu*exp(A)*ahat+x                    | 1 <= ahat <= inf
       - Theta*Y/n-q*(mu*A*Ea+x*(1-Fhat))     
       - x - (-w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1))*x(1))) 
 
