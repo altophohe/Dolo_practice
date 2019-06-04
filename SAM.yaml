@@ -36,7 +36,7 @@ equations:
     transition:
         - A = rho*A(-1) + e
         - n = (1-F)*n(-1)+(1-Fhat)*M
-        
+        - u=1-n
     value:
         - V = (C^(1-sigma)-1)/(1-sigma) + beta*V(1)
 
@@ -52,7 +52,6 @@ equations:
         - w = w_ss*(Y/Y_ss)^(gamma_w)
         - Ce=(1-Theta*(v/n)-T*F*n(-1)/Y-Phi)*Y-C
         - y = A*(n(-1)*Ea+M*Eahat)
-        - u=1-n
         - b=rtilde*w
         - C=w*n+b*u
      
