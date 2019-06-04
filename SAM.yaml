@@ -14,14 +14,7 @@ symbols:
 
 definitions:
         
-        - F= 1-(aL/abar)^(alpha)
-        - Fhat = 1-(aL/ahat)^(alpha)
-        - Ea= alpha/(alpha-1)*(aL/abar)^(alpha-1)
-        - Eahat=alpha/(alpha-1)*(aL/ahat)^(alpha-1)
-        - q= M/v
-        - f=M/utilde
-        - theta=v/utilde
-        - utilde=u(-1)+F*n(-1)
+        
        
 
     
@@ -54,7 +47,14 @@ equations:
         - y = A*(n(-1)*Ea+M*Eahat)
         - b=rtilde*w
         - C=w*n+b*u
-     
+        - F= 1-(aL/abar)^(alpha)
+        - Fhat = 1-(aL/ahat)^(alpha)
+        - Ea= alpha/(alpha-1)*(aL/abar)^(alpha-1)
+        - Eahat=alpha/(alpha-1)*(aL/ahat)^(alpha-1)
+        - q= M/v
+        - f=M/utilde
+        - theta=v/utilde
+        - utilde=u(-1)+F*n(-1)
         
 calibration:
 
