@@ -60,7 +60,7 @@ calibration:
 
     # parameters 
     beta :0.9604
-    T : 0.4
+    T :0.4
     rhoA : 0.75
     sigmaA : 0.001
     aL : 1
