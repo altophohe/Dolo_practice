@@ -4,7 +4,7 @@ symbols:
 
    exogenous: [e]
    states: [n, A, u]
-   controls: [C, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, M, q, f, w, lambda, mu, Ce, b, theta, mu]
+   controls: [C, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, M, q, f, w, lambda, mu, Ce, b, theta]
    expectations: [Q]
    values: [V]
    rewards: [U]
@@ -59,22 +59,22 @@ equations:
 calibration:
 
     # parameters 
-    beta :0.9604
-    T :0.4
-    rhoA :0.75
-    sigmaA :0.001
-    aL :1
-    alpha :2
-    Theta :0.1815
-    chi :0.7287
-    gamma :0.5
-    gamma_w :1
-    w_ss :1.6327
-    Y_ss :1.8384
-    rtilde :0.8
-    Phi :0.01
+    beta:0.9604
+    T:0.4
+    rhoA:0.75
+    sigmaA:0.001
+    aL:1
+    alpha:2
+    Theta:0.1815
+    chi:0.7287
+    gamma:0.5
+    gamma_w:1
+    w_ss:1.6327
+    Y_ss:1.8384
+    rtilde:0.8
+    Phi:0.01
     eta:6
-    mu :(eta-1)/eta-Phi
+    mu:(eta-1)/eta-Phi
     
     # endogenous variables
     n:0.85
