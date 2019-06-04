@@ -54,58 +54,58 @@ equations:
         
 calibration:
     # parameters 
-      beta:0.9604
-      T:0.4
-      rhoA:0.75
-      sigmaA:0.001
-      aL:1
-      alpha:2
-      Theta:0.1815
-      chi:0.7287
-      gamma:0.5
-      gamma_w:1
-      w_ss:1.6327
-      Y_ss:1.8384
-      rtilde:0.8
-      Phi:0.01
-      eta:6
-      mu:(eta-1)/eta-Phi
+   beta:0.9604
+   T:0.4
+   rhoA:0.75
+   sigmaA:0.001
+   aL:1
+   alpha:2
+   Theta:0.1815
+   chi:0.7287
+   gamma:0.5
+   gamma_w:1
+   w_ss:1.6327
+   Y_ss:1.8384
+   rtilde:0.8
+   Phi:0.01
+   eta:6
+   mu:(eta-1)/eta-Phi
     # endogenous variables
-      F:0.08
-      Fhat:0.571920147319773
-      f:0.728664531982996
-      q:0.728664531982996
-      theta=1
-      M:0.158848867972293
-      v:0.218
-      abar:1.042572070155520
-      ahat:1.528402029669690
-      utilde:0.218
-      Ce:0.142003933605756
-      C:w_ss*0.85+rtilde*w_ss*0.15
-      U:(C^(1-sigma)-1)/(1-sigma)
-      V:U/(1-beta)
-      lambda:-1.258384337761378
-      A:0
-      Ea:1.918332609564019
-      Eahat:1.308556231394321
-      Q:beta
-      n:0.85
-      u:0.15
-      w:w_ss
-      b:rtilde*w_ss
-      Y:Y_ss
+   F:0.08
+   Fhat:0.571920147319773
+   f:0.728664531982996
+   q:0.728664531982996
+   theta=1
+   M:0.158848867972293
+   v:0.218
+   abar:1.042572070155520
+   ahat:1.528402029669690
+   utilde:0.218
+   Ce:0.142003933605756
+   C:w_ss*0.85+rtilde*w_ss*0.15
+   U:(C^(1-sigma)-1)/(1-sigma)
+   V:U/(1-beta)
+   lambda:-1.258384337761378
+   A:0
+   Ea:1.918332609564019
+   Eahat:1.308556231394321
+   Q:beta
+   n:0.85
+   u:0.15
+   w:w_ss
+   b:rtilde*w_ss
+   Y:Y_ss
 
 exogenous: !Normal
-      Sigma: [[sigmaA**2]]
+   Sigma: [[sigmaA**2]]
 
 domain:
-      A: [-3*sigmaA/(1-rhoA^2)^0.5,  3*sigmaA/(1-rhoA^2)^0.5]
-      n: [ 0.75, 0.99]
+   A: [-3*sigmaA/(1-rhoA^2)^0.5,  3*sigmaA/(1-rhoA^2)^0.5]
+   n: [ 0.75, 0.99]
    
 options:
-      grid: !Cartesian
-      orders: [20, 20]
+   grid: !Cartesian
+   orders: [20, 20]
 
 
 
