@@ -8,7 +8,7 @@ symbols:
    expectations: [Q]
    values: [V]
    rewards: [U]
-   parameters: [mu, T, rhoA, sigmaA, aL, alpha, beta, Theta, chi, gamma, gamma_w, w_ss, Y_ss, rtilde, Phi]
+   parameters: [mu, eta, T, rhoA, sigmaA, aL, alpha, beta, Theta, chi, gamma, gamma_w, w_ss, Y_ss, rtilde, Phi]
    
 
 
@@ -61,19 +61,20 @@ calibration:
     # parameters 
     beta :0.9604
     T :0.4
-    rhoA : 0.75
-    sigmaA : 0.001
-    aL : 1
-    alpha : 2
-    Theta : 0.1815
-    chi : 0.7287
-    gamma : 0.5
-    gamma_w : 1
+    rhoA :0.75
+    sigmaA :0.001
+    aL :1
+    alpha :2
+    Theta :0.1815
+    chi :0.7287
+    gamma :0.5
+    gamma_w :1
     w_ss :1.6327
-    Y_ss : 1.8384
-    rtilde : 0.8
-    Phi : 0.01
-    mu : (eta-1)/eta-Phi
+    Y_ss :1.8384
+    rtilde :0.8
+    Phi :0.01
+    eta:6
+    mu :(eta-1)/eta-Phi
     
     # endogenous variables
     n: 0.85
