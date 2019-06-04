@@ -2,13 +2,14 @@ name: My_model
 
 symbols:
 
-   exogenous: [e_A]
+   exogenous: [e]
    states: [n, A, u]
    controls: [c, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, M, q, f, w, lambda, mu, Ce, b, theta, mu]
    expectations: [Q]
    values: [V]
-   parameters: [mu, T, rhoA, sigmaA, aL, alpha, beta, Theta, chi, gamma, gamma_w, w_ss, Y_ss, rtilde, epsilon, Phi]
    rewards: [U]
+   parameters: [mu, T, rhoA, sigmaA, aL, alpha, beta, Theta, chi, gamma, gamma_w, w_ss, Y_ss, rtilde, epsilon, Phi]
+   
 
 
 definitions:
@@ -21,6 +22,7 @@ definitions:
         - f=M/utilde
         - theta=v/utilde
         - utilde=u(-1)+F*n(-1)
+       
 
     
 equations:
@@ -32,7 +34,7 @@ equations:
         
 
     transition:
-        - A = rho*A(-1) + e_A
+        - A = rho*A(-1) + e
         - n = (1-F)*n(-1)+(1-Fhat)*M
         
     value:
