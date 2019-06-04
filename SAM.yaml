@@ -4,7 +4,7 @@ symbols:
 
    exogenous: [e_A]
    states: [n, A, u]
-   controls: [c, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, n, M, q, f, w, lambda, mu, Ce, b, theta, mu]
+   controls: [c, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, M, q, f, w, lambda, mu, Ce, b, theta, mu]
    expectations: [Q]
    values: [V]
    parameters: [mu, T, rhoA, sigmaA, aL, alpha, beta, Theta, chi, gamma, gamma_w, w_ss, Y_ss, rtilde, epsilon, Phi]
@@ -20,7 +20,7 @@ definitions:
         - q= M/v
         - f=M/utilde
         - theta=v/utilde
-        
+        - utilde=u(-1)+F*n(-1)
 
     
 equations:
@@ -54,7 +54,7 @@ equations:
         - c= w
         - u=1-n
         - b=rtilde*w
-        - utilde=u(-1)+F*n(-1)
+     
         
 calibration:
 
