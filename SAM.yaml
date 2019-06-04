@@ -49,9 +49,7 @@ equations:
       - U =  (C^(1-sigma)-1)/(1-sigma) 
    expectation:
       - Q = beta*((C/C(1))^(sigma))   
-   direct_response:
-      
-        
+   
 calibration:
     # parameters 
    beta:0.9604
