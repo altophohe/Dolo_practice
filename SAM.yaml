@@ -107,7 +107,7 @@ domain:
 
 options:
     grid: !Cartesian
-        n: [20, 20]
+    orders: [20, 20]
 
 
 
