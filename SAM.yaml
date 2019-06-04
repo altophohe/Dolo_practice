@@ -70,7 +70,6 @@ calibration:
    Phi:0.01
    eta:6
    mu:(eta-1)/eta-Phi
-    # endogenous variables
    F:0.08
    Fhat:0.571920147319773
    f:0.728664531982996
