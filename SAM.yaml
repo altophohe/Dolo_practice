@@ -77,11 +77,11 @@ calibration:
     mu :(eta-1)/eta-Phi
     
     # endogenous variables
-    n: 0.85
+    n:0.85
     u:0.15
-    w: w_ss
-    b: rtilde*w_ss
-    Y: Y_ss
+    w:w_ss
+    b:rtilde*w_ss
+    Y:Y_ss
     F:0.08
     Fhat:0.571920147319773
     f:0.728664531982996
@@ -92,10 +92,10 @@ calibration:
     abar:1.042572070155520
     ahat:1.528402029669690
     utilde:0.218
-    Ce:  0.142003933605756
-    C: w_ss*0.85+rtilde*w_ss*0.15
-    U: (C^(1-sigma)-1)/(1-sigma)
-    V: U/(1-beta)
+    Ce:0.142003933605756
+    C:w_ss*0.85+rtilde*w_ss*0.15
+    U:(C^(1-sigma)-1)/(1-sigma)
+    V:U/(1-beta)
     
    
 
