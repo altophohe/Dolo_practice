@@ -4,7 +4,7 @@ symbols:
 
    exogenous: [e]
    states: [n, A, u]
-   controls: [C, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, M, q, f, w, lambda1, Ce, b, theta]
+   controls: [C, abar, ahat, F, Fhat, Ea, Eahat, utilde, Y, M, q, f, w, x, Ce, b, theta]
    expectations: [Q]
    values: [V]
    rewards: [U]
@@ -21,10 +21,10 @@ definitions:
 equations:
 
    arbitrage:
-      - T+mu*exp(A)*abar+lambda1                   | 1 <= abar <= inf
-      - mu*exp(A)*ahat+lambda1                     | 1 <= ahat <= inf
-      - Theta*Y/n-q*(mu*A*Ea+lambda1*(1-Fhat))     
-      - lambda1 - (-w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1))*lambda1(1))) 
+      - T+mu*exp(A)*abar+x                  | 1 <= abar <= inf
+      - mu*exp(A)*ahat+x                     | 1 <= ahat <= inf
+      - Theta*Y/n-q*(mu*A*Ea+x*(1-Fhat))     
+      - x - (-w+beta*(-T*F(1)+mu(1)*A(1)*Ea(1)+(1-F(1))*x(1))) 
 
    transition:
       - A = rho*A(-1) + e
@@ -84,7 +84,7 @@ calibration:
    C:w_ss*0.85+rtilde*w_ss*0.15
    U:(C^(1-sigma)-1)/(1-sigma)
    V:U/(1-beta)
-   lambda1:-1.258384337761378
+   x:-1.258384337761378
    A:0
    Ea:1.918332609564019
    Eahat:1.308556231394321
