@@ -13,7 +13,7 @@ symbols:
 
 
 definitions:
-   - C=w*n+b*u
+  
    - F= 1-(aL/abar)^(alpha)
    - Fhat = 1-(aL/ahat)^(alpha)
    - Ea= alpha/(alpha-1)*(aL/abar)^(alpha-1)
@@ -27,7 +27,7 @@ definitions:
    - q= M/v
    - f=M/utilde
    - theta=v/utilde       
-        
+   - C=w*n+b*u       
        
 
     
