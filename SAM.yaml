@@ -1,4 +1,4 @@
-name: My model
+name: My_model
 
 symbols:
 
@@ -74,7 +74,6 @@ calibration:
     rtilde : 0.8
     epsilon : 2.5
     Phi : 0.01
-    phi: 1
     mu : (eta-1)/eta-Phi
     
     # endogenous variables
