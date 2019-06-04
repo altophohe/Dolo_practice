@@ -71,9 +71,6 @@ calibration:
       eta:6
       mu:(eta-1)/eta-Phi
     # endogenous variables
-      w:w_ss
-      b:rtilde*w_ss
-      Y:Y_ss
       F:0.08
       Fhat:0.571920147319773
       f:0.728664531982996
@@ -95,7 +92,9 @@ calibration:
       Q:beta
       n:0.85
       u:0.15
-   
+      w:w_ss
+      b:rtilde*w_ss
+      Y:Y_ss
 
 exogenous: !Normal
       Sigma: [[sigmaA**2]]
