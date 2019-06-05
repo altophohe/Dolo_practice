@@ -20,8 +20,6 @@ definitions:
    - Eahat: alpha/(alpha-1)*(aL/ahat)^(alpha-1)
    - utilde: u(-1)+F*n(-1)
    - M : chi*utilde^gamma*v^(1-gamma)
-   - w : w_ss*(Y/Y_ss)^(gamma_w)
-   - Ce: (1-Theta*(v/n)-T*F*n(-1)/Y-Phi)*Y-C
    - Y: A*(n(-1)*Ea+M*Eahat)
    - b: rtilde*w
    - q: M/v
@@ -49,8 +47,9 @@ equations:
       - U =  (C^(1-sigma)-1)/(1-sigma) 
    expectation:
       - Q = beta*((C/C(1))^(sigma))   
-   
-   
+   direct_response:
+      - Ce = (1-Theta*(v/n)-T*F*n(-1)/Y-Phi)*Y-C
+      - w : w_ss*(Y/Y_ss)^(gamma_w)
 calibration:
     # parameters 
    beta:0.9604
