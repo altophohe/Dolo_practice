@@ -14,7 +14,7 @@ symbols:
 
 definitions:
   
-   - F= 1-(aL/abar)^(alpha)
+   - F: 1-(aL/abar)^(alpha)
    - Fhat : 1-(aL/ahat)^(alpha)
    - Ea: alpha/(alpha-1)*(aL/abar)^(alpha-1)
    - Eahat: alpha/(alpha-1)*(aL/ahat)^(alpha-1)
@@ -102,7 +102,7 @@ domain:
    
 options:
    grid: !Cartesian
- orders: [20, 20]
+      orders: [20, 20]
 
 
 
